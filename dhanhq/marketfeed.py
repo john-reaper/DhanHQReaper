@@ -79,7 +79,8 @@ class DhanFeed:
         self._is_first_connect = True
         self.ws = None
         self.on_ticks = None
-        self.loop = asyncio.set_event_loop()
+        loop1 = asyncio.new_event_loop()
+        self.loop = asyncio.set_event_loop(loop1)
 
     def run_forever(self):
         """Starts the WebSocket connection and runs the event loop."""
